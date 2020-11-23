@@ -1,0 +1,10 @@
+<gridster [options]="options">
+  <gridster-item [item]="widget" *ngFor="let widget of dashboard">
+    <div class="gridster-item-content" (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">
+      <button (click)="removeItem(widget)">remove</button>
+      <ndc-dynamic [ndcDynamicComponent]="widget.componentType"></ndc-dynamic>
+    </div>
+  </gridster-item>
+</gridster>
+
+<button (click)="addItem()">Add</button>
